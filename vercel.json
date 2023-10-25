@@ -1,14 +1,18 @@
 {
-    "builds":[
+    "builds": [
         {
-            "src":"app.py",
-            "use":"@vercel/python"
+            "src": "Nyx/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "15mb",
+                "runtime": "python3.9"
+            }
         }
     ],
-    "routes":[
+    "routes": [
         {
-            "src":"/(.*)",
-            "dest":"app.py"
+            "src": "/(.*)",
+            "dest": "Nyx/wsgi.py"
         }
     ]
 }
